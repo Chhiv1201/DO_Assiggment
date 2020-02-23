@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A799F0CB-A399-4A53-AFEB-DBF8BB7318FF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>DeliveryOrder</RootNamespace>
+    <AssemblyName>DeliveryOrder</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Authentications\login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Authentications\login.Designer.cs">
+      <DependentUpon>login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Authentications\registerCoperator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Authentications\registerCoperator.Designer.cs">
+      <DependentUpon>registerCoperator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Authentications\registerDriverStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Authentications\registerDriverStaff.Designer.cs">
+      <DependentUpon>registerDriverStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Authentications\registerStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Authentications\registerStaff.Designer.cs">
+      <DependentUpon>registerStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Authentications\registration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Authentications\registration.Designer.cs">
+      <DependentUpon>registration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Menu\MainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Menu\MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Menu\PickUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Menu\PickUp.Designer.cs">
+      <DependentUpon>PickUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SingleTon\Database.cs" />
+    <Compile Include="Model\SqlCmdBuilder\SqlDelete.cs" />
+    <Compile Include="Model\SqlCmdBuilder\SqlInsert.cs" />
+    <Compile Include="Model\SqlCmdBuilder\SqlQueryBuilder.cs" />
+    <Compile Include="Model\SqlCmdBuilder\SqlSelect.cs" />
+    <Compile Include="Model\SqlCmdBuilder\SqlUpdate.cs" />
+    <Compile Include="Model\SqlCmdBuilder\_SqlCommandBuilder.cs" />
+    <Compile Include="Model\SqlCmdBuilder\_SqlString.cs" />
+    <Compile Include="Model\SqlModel\CarDriver.cs" />
+    <Compile Include="Model\SqlModel\Coperator.cs" />
+    <Compile Include="Model\SqlModel\ISqlModel.cs" />
+    <Compile Include="Model\SqlModel\MotoDriver.cs" />
+    <Compile Include="Model\SqlModel\Product.cs" />
+    <Compile Include="Model\SqlModel\Staff.cs" />
+    <Compile Include="Model\SqlModel\User.cs" />
+    <Compile Include="Model\SqlModel\UserRole.cs" />
+    <Compile Include="Model\SqlTransaction.cs" />
+    <Compile Include="operation.cs" />
+    <Compile Include="Pattern\UserBuilder\AdminBuilder.cs" />
+    <Compile Include="Pattern\UserBuilder\CarDriverBuilder.cs" />
+    <Compile Include="Pattern\UserBuilder\CoperatorBuilder.cs" />
+    <Compile Include="Pattern\UserBuilder\IUserBuilder.cs" />
+    <Compile Include="Pattern\UserBuilder\MotoDriverBuilder.cs" />
+    <Compile Include="Pattern\UserBuilder\UserBuilder.cs" />
+    <Compile Include="Pattern\UserBuilder\UserInfo.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Authentications\login.resx">
+      <DependentUpon>login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Authentications\registerCoperator.resx">
+      <DependentUpon>registerCoperator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Authentications\registerDriverStaff.resx">
+      <DependentUpon>registerDriverStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Authentications\registerStaff.resx">
+      <DependentUpon>registerStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Authentications\registration.resx">
+      <DependentUpon>registration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Menu\MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Menu\PickUp.resx">
+      <DependentUpon>PickUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
